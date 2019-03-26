@@ -19,5 +19,6 @@ public class StorageApp extends Application{
     public Set<Object> getSingletons() {
         return singletons;
     }
+    
 
 }

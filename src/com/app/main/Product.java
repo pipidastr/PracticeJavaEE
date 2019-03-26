@@ -2,44 +2,21 @@ package com.app.main;
 
 import java.io.Serializable;
 
-public class Product extends Item implements Serializable{
+public class Product implements Serializable{
     
     private static final long serialVersionUID = -1363689602281760557L;
-    private static int nextID = 1;
     
+    private int ID;
     private String name;
-    private Provider provider;
+    private int providerID;
     private double price;
     private int count;
-    private int ID;
     
-    Product (String name, double price, int count, Provider provider){
+    public Product(int ID, String name, int providerID, double price, int count) {
+        this.ID = ID;
         this.name = name;
+        this.providerID = providerID;
         this.price = price;
-        this.count = count;
-        this.provider = provider;
-        this.ID = nextID;
-        nextID++;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getCount() {
-        return count;
-    }
-    public void setCount(int count) {
         this.count = count;
     }
 
@@ -47,30 +24,44 @@ public class Product extends Item implements Serializable{
         return ID;
     }
 
-    public Provider getProvider() {
-        return provider;
+    public void setID(int iD) {
+        ID = iD;
     }
 
-    public void setProvider(Provider provider) {
-        this.provider = provider;
+    public String getName() {
+        return name;
     }
-    
-    @Override
-    public String toString() {
-        return "ID: " + ID + " name: " + name + " price: " + price + " RUB  count: " + count + " QTY";
+
+    public void setName(String name) {
+        this.name = name;
     }
-    
-    public static int getNextID() {
-        return nextID;
+
+    public int getProviderID() {
+        return providerID;
     }
-    
-    public static void setNextID(int newNextID) {
-        nextID = newNextID;
+
+    public void setProviderID(int providerID) {
+        this.providerID = providerID;
     }
-    
-    @Override
-    public String getClassName() {
-        return "Product";
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
     }
 
 }
