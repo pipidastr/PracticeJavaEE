@@ -1,9 +1,22 @@
-package com.app.main;
+package com.app.model;
 
-public class Order {
+import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+@JsonIgnoreProperties
+public class Order implements Serializable{
+
+    private static final long serialVersionUID = -5494736327517230860L;
+    
     private int ID;
+    
+    @JsonProperty("consumerID")
     private int consumerID;
+    
+    public Order() {
+    }
     
     public Order(int ID, int consumerID) {
         this.ID = ID;

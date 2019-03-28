@@ -1,16 +1,31 @@
-package com.app.main;
+package com.app.model;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+@JsonIgnoreProperties
 public class Product implements Serializable{
     
     private static final long serialVersionUID = -1363689602281760557L;
     
     private int ID;
+    
+    @JsonProperty("name")
     private String name;
+    
+    @JsonProperty("providerID")
     private int providerID;
+    
+    @JsonProperty("price")
     private double price;
+    
+    @JsonProperty("count")
     private int count;
+    
+    public Product() {
+    }
     
     public Product(int ID, String name, int providerID, double price, int count) {
         this.ID = ID;
@@ -58,10 +73,6 @@ public class Product implements Serializable{
 
     public void setCount(int count) {
         this.count = count;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
     }
 
 }

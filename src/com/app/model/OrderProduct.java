@@ -1,10 +1,25 @@
-package com.app.main;
+package com.app.model;
 
-public class OrderProduct {
+import java.io.Serializable;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+@JsonIgnoreProperties
+public class OrderProduct implements Serializable{
+    
+    private static final long serialVersionUID = 4583899138413083312L;
     
     private int ID;
+    
+    @JsonProperty("productID")
     private int productID;
+    
+    @JsonProperty("count")
     private int count;
+    
+    public OrderProduct() {
+    }
     
     public OrderProduct(int ID, int productID, int count) {
         this.ID = ID;

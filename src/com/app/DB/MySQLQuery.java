@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.app.main.Consumer;
-import com.app.main.Order;
-import com.app.main.OrderProduct;
-import com.app.main.Product;
-import com.app.main.Provider;
+import com.app.model.Consumer;
+import com.app.model.Order;
+import com.app.model.OrderProduct;
+import com.app.model.Product;
+import com.app.model.Provider;
 
 public class MySQLQuery {
     
@@ -95,7 +95,7 @@ public class MySQLQuery {
                 List<Object> consumersList = new ArrayList<>();
                 
                 while(resultSet.next()) {
-                    consumersList.add(new Consumer(resultSet.getInt("ID")));
+                    consumersList.add(new Consumer(resultSet.getInt("ID"), resultSet.getString("consumer_name")));
                 }
                 return consumersList;
             }

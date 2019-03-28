@@ -1,4 +1,4 @@
-package com.app.main;
+package com.app.model;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class Provider implements Serializable{
 
     private static final long serialVersionUID = -2994953547927924480L;
- 
+    
     private int ID;
     
     @JsonProperty("name")
@@ -37,11 +37,6 @@ public class Provider implements Serializable{
     
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "provider ID = " + ID + " " + name;
     }
      
 }
